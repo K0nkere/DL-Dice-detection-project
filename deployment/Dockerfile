@@ -3,9 +3,9 @@ FROM python:3.9.12-slim
 WORKDIR /app
 
 RUN mkdir models
-COPY ["deployment/app.py", "deployment/requirements.txt", "./"]
+COPY ["deployment/app.py", "deployment/requirements.txt", "deployment/main.py", "./"]
 
-COPY ["models/detection-model-dr03-0729.tflite", "models/viz-model-dr03-0729.tflite", "./models/"]
+COPY ["models/xception-classifier-prepr-dr075-0.980.tflite", "models/viz-model-dr03-0729.tflite", "./models/"]
 
 RUN pip install -U pip
 RUN pip install -r requirements.txt
