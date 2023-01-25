@@ -31,8 +31,8 @@ class Detector:
             img_size=128,
             preprocess_type="standart",
             classes = ['d10','d12','d20','d4','d6','d8','dicesback'],
-            detection_model="models/xception-classifier-prepr-dr075-0.980.tflite",
-            viz_model="models/viz-model-dr03-0729.tflite",
+            detection_model="models/xception-classifier.tflite",
+            viz_model="models/viz-model.tflite",
         ):
         def preprocess(X, rescale=255):
         

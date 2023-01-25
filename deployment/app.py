@@ -10,9 +10,9 @@ from main import Detector
 img_size=128
 classes = ['d10','d12','d20','d4','d6','d8','dicesback']
 
-prefix = "../"
-detection_model = f"{prefix}models/xception-classifier-prepr-dr075-0.980.tflite"
-viz_model = f"{prefix}models/viz-model-dr03-0729.tflite"
+prefix = ""
+detection_model = f"{prefix}models/xception-classifier.tflite"
+viz_model = f"{prefix}models/viz-model.tflite"
 
 preprocess_type = "xception"
 
