@@ -31,7 +31,7 @@ class Detector:
             img_size=128,
             preprocess_type="standart",
             classes = ['d10','d12','d20','d4','d6','d8','dicesback'],
-            detection_model="models/xception-classifier.tflite",
+            classifier_model="models/xception-classifier.tflite",
             viz_model="models/viz-model.tflite",
         ):
         def preprocess(X, rescale=255):
@@ -51,7 +51,7 @@ class Detector:
 
         self.classes = classes
         self.img_size = img_size
-        self.detection_model = detection_model
+        self.classifier_model = classifier_model
         self.viz_model = viz_model
 
         if preprocess_type == "standart":
@@ -61,7 +61,7 @@ class Detector:
             self.preprocess = xception_preprocess
 
 
-    def get_predictions(self, X, model_path="detection-model-dr03-0729.tflite"):
+    def get_predictions(self, X, model_path):
         
         interpreter = tflite.Interpreter(model_path)
         interpreter.allocate_tensors()
@@ -77,7 +77,7 @@ class Detector:
         return predictions
 
 
-    def get_mask(self, features, threshold=1.5): #sample_url, viz_model, n_layer):
+    def get_mask(self, features, threshold=1.5):
         """
         Mask selection based on mean feature maps approach
         """
@@ -189,6 +189,10 @@ class Detector:
         mask = f_mask[:, :, np.newaxis].copy()
 
         labeled_masks = self.get_clusters(mask)
+
+        if not isinstance(labeled_masks, np.ndarray):
+            return None
+
         anchors = self.get_anchors(labeled_masks=labeled_masks)
 
         if anchors:
@@ -212,7 +216,7 @@ class Detector:
                 x_sample = np.array([x_sample], dtype='float')
                 X_sample = self.preprocess(x_sample)
 
-                classes_prob = self.get_predictions(X_sample, self.detection_model)
+                classes_prob = self.get_predictions(X_sample, self.classifier_model)
 
                 result = sorted(dict(zip(self.classes, classes_prob)).items(), reverse=True, key=lambda x: x[1])[0]
                 

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: detection-model
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: detection-model
+  template:
+    metadata:
+      labels:
+        app: detection-model
+    spec:
+      containers:
+      - name: detection-pod
+        image: dice-detection-model:v03
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "300m"
+          limits:
+            memory: "2048Mi"
+            cpu: "900m"
+        ports:
+        - containerPort: 9696

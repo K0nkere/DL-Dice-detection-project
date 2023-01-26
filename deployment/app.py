@@ -11,12 +11,12 @@ img_size=128
 classes = ['d10','d12','d20','d4','d6','d8','dicesback']
 
 prefix = ""
-detection_model = f"{prefix}models/xception-classifier.tflite"
+classifier_model = f"{prefix}models/xception-classifier.tflite"
 viz_model = f"{prefix}models/viz-model.tflite"
 
 preprocess_type = "xception"
 
-predictor = Detector(img_size=128, preprocess_type=preprocess_type, classes=classes, detection_model=detection_model, viz_model=viz_model)
+predictor = Detector(img_size=128, preprocess_type=preprocess_type, classes=classes, classifier_model=classifier_model, viz_model=viz_model)
 
 
 def compress_nparr(nparr):
