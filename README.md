@@ -12,7 +12,7 @@ I splitted the problem into two tasks:
 Full prediction pipeline is the following
 
 ### Dataset description
-Original dataset is taken from Kaggle[https://www.kaggle.com/datasets/ucffool/dice-d4-d6-d8-d10-d12-d20-images] + i append background images additionally. No extra info about dice positions or bounding boxes.
+Original dataset is taken from [Kaggle](https://www.kaggle.com/datasets/ucffool/dice-d4-d6-d8-d10-d12-d20-images) + i append background images additionally. No extra info about dice positions or bounding boxes.
 
 - the original dataset contains dice images on a various backgrounds that labeled with a dice type.
 - all training images are 480x480
@@ -90,8 +90,8 @@ run in terminal from project folder
 `bash kube-deployment.sh`
 
 Test with test.ipynb + dont forget that row with url = "http://localhost:8080/predict" should be uncommented
-[https://github.com/K0nkere/dice-detection-project/blob/main/pics/predictions_1.png?raw=true]
-[pics/predictions_2.png]
+(https://github.com/K0nkere/dice-detection-project/blob/main/pics/predictions_1.png?raw=true)
+(pics/predictions_2.png])
 
 Close port-forwarding with Ctrl+C
 End of test run
