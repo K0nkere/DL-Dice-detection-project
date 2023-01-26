@@ -91,7 +91,8 @@ run in terminal from project folder
 
 Test with test.ipynb + dont forget that row with url = "http://localhost:8080/predict" should be uncommented
 ![alt text](https://github.com/K0nkere/dice-detection-project/blob/main/pics/predictions_1.png?raw=true)
-![alt text](https://github.com/K0nkere/dice-detection-project/blob/main/pics/predictions_2.png&raw=true)
+
+![alt text](https://github.com/K0nkere/dice-detection-project/blob/cb164f53d5fadbc0b5b7187244d0d4458096b9e3/pics/predictions_2.png)
 
 Close port-forwarding with Ctrl+C
 End of test run
