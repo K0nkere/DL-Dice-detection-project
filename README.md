@@ -20,16 +20,32 @@ Original [dataset is taken from Kaggle](https://www.kaggle.com/datasets/ucffool/
 - most d6 and d20 validation images are 480x480
 - for the test purposes i created photos with my own dices on the different backgrounds
 
-Repo consist of files
+### Project Run Guide
+#### Requirements
+- Ubuntu 22
+- docker
+- anaconda
+- Kubernetes kind, kubectl
+
+#### Clone this repo
+`git clone https://github.com/K0nkere/dice-detection-project.git`
+
+#### Download training+validation dataset from my repo
+from project folder
+`wget https://storage.yandexcloud.net/ybs-123123/dices-dataset.zip`
+`unzip dice-dataset.zip`
+download dice dataset
+unzip dice dataset
+
+
+#### Repo consist of files
 - basic-EDA.ipynb - exploratory data analisys for images of dataset that covers number of samples in each class, mean image per class construction
-
 - dice-detection-model-tuning.ipynb - notebook that covers process parametes tuning for detection and classification models 
-
 - conda-requirements.txt - conda venv for project creation
-
 - test-urls.txt - links to test images, that i've created with my own dices
-
 - test.ipynb - notebook to send tests for prediction service
+- kube-deployment.sh - script for deployment with kind and kubectl
+- kude-terminate.sh - script for terminating Kubernetes deployment
 
 - models/models-converter.py - convert .h5 models into .tflite
 - models/viz-model.tflite - my pretrained detection model
@@ -40,12 +56,11 @@ Repo consist of files
 - deployment/requirements.txt - environment for the docker image
 - deployment/Dockerfile - for Flask app
 
-# models training sctipt
+### models training script
 
-Steps
-Reqs Ubuntu, docker, anaconda
-download dice dataset
-unzip dice dataset
+
+
+
 create conda venv
 train models with script (or use pretrained)
 convert models with script (or use pretrained)
@@ -55,10 +70,7 @@ build docker image for Flask app
 run image
 test Flask app from image
 
-### Download training+validation dataset
-from project folder
-`wget https://storage.yandexcloud.net/ybs-123123/dices-dataset.zip`
-`unzip dice-dataset.zip`
+
 
 Create conda virtual environmet based on conda-requirements.txt
 <>
@@ -89,11 +101,16 @@ Fast Kubernetes deployment
 run in terminal from project folder
 `bash kube-deployment.sh`
 
-Test with test.ipynb + dont forget that row with url = "http://localhost:8080/predict" should be uncommented
+Test with test.ipynb + dont forget that row with `url = "http://localhost:8080/predict"` should be uncommented
+
+Close port-forwarding with Ctrl+C
+
+End of test run
+```bash kube-terminate.sh```
+
+### Examples of predictions
 ![alt text](https://github.com/K0nkere/dice-detection-project/blob/main/pics/predictions_1.png?raw=true)
 
 ![alt text](https://github.com/K0nkere/dice-detection-project/blob/cb164f53d5fadbc0b5b7187244d0d4458096b9e3/pics/predictions_2.png)
 
-Close port-forwarding with Ctrl+C
-End of test run
-`bash kube-terminate.sh`
+
