@@ -62,8 +62,9 @@ wget https://storage.yandexcloud.net/ybs-123123/dice-models/dice-detection-model
 ```
 
 run **model-coverter.py** script
-
-`python models/model-converter.py`
+```
+python models/model-converter.py
+```
 
 #### 5. Docker images
 build docker image for Flask app - run from _project folder_
@@ -88,7 +89,6 @@ bash kube-terminate.sh
 ```
 
 ### Repo consist of files
->
 - basic-EDA.ipynb - exploratory data analisys for images of dataset that covers number of samples in each class, mean image per class construction
 - dice-detection-model-tuning.ipynb - notebook that covers process parametes tuning for detection and classification models 
 - conda-requirements.txt - conda venv for project creation
@@ -97,12 +97,12 @@ bash kube-terminate.sh
 - kube-deployment.sh - script for deployment with kind and kubectl
 - kude-terminate.sh - script for terminating Kubernetes deployment
 
->
+
 - models/models-converter.py - convert .h5 models into .tflite
 - models/viz-model.tflite - my pretrained detection model
 - models/xception-classifier.tflite - my pretrained classification model
 
->
+
 - deployment/app.py - flask app script
 - deployment/main.py - the core of prediction pipeline
 - deployment/requirements.txt - environment for the docker image
