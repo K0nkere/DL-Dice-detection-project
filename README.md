@@ -20,23 +20,33 @@ Original [dataset is taken from Kaggle](https://www.kaggle.com/datasets/ucffool/
 - most d6 and d20 validation images are 480x480
 - for the test purposes i created photos with my own dices on the different backgrounds
 
-### Project Run Guide
+### Project run Guide
 #### Requirements
 - Ubuntu 22
 - docker
 - anaconda
 - Kubernetes kind, kubectl
 
-#### Clone this repo
+#### 1. Clone this repo
 `git clone https://github.com/K0nkere/dice-detection-project.git`
 
-#### Download training+validation dataset from my repo
-from project folder
-`wget https://storage.yandexcloud.net/ybs-123123/dices-dataset.zip`
-`unzip dice-dataset.zip`
-download dice dataset
-unzip dice dataset
+dice-detection-project will be your _project folder_
+#### 2. Download training+validation dataset from my repo
+from the _project folder_
 
+`wget https://storage.yandexcloud.net/ybs-123123/dices-dataset.zip`
+
+`unzip dice-dataset.zip`
+#### 3. Create conda virtual environment
+`conda create -y -n dice-detection python=3.9`
+```conda activate dice-detection```
+```pip3 install -r conda-requirements.txt```
+
+Add conda env kernel to kernels list in order to use as notebook kernel
+```conda install -y -c anaconda ipykernel```
+```python -m ipykernel install --user --name=dice-detection```
+
+Add select conda env kernel as a kernel for notebooks or add as it an interpreter
 
 #### Repo consist of files
 - basic-EDA.ipynb - exploratory data analisys for images of dataset that covers number of samples in each class, mean image per class construction
