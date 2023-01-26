@@ -39,12 +39,15 @@ from the _project folder_
 `unzip dice-dataset.zip`
 #### 3. Create conda virtual environment
 `conda create -y -n dice-detection python=3.9`
-```conda activate dice-detection```
-```pip3 install -r conda-requirements.txt```
+
+`conda activate dice-detection`
+
+`pip3 install -r conda-requirements.txt`
 
 Add conda env kernel to kernels list in order to use as notebook kernel
-```conda install -y -c anaconda ipykernel```
-```python -m ipykernel install --user --name=dice-detection```
+`conda install -y -c anaconda ipykernel`
+
+`python -m ipykernel install --user --name=dice-detection`
 
 Add select conda env kernel as a kernel for notebooks or add as it an interpreter
 
