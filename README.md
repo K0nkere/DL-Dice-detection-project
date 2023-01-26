@@ -40,10 +40,9 @@ unzip dice-dataset.zip
 #### 3. Create conda virtual environment
 ```
 conda create -y -n dice-detection python=3.9
-
 conda activate dice-detection
-
 pip3 install -r conda-requirements.txt
+```
 
 Add conda env kernel to kernels list in order to use as notebook kernel
 ```
@@ -59,7 +58,6 @@ Add select conda env kernel as a kernel for notebooks or add as it an interprete
 Download original .h5 models - run the _project folder_ under conda activated env
 ```
 wget https://storage.yandexcloud.net/ybs-123123/dice-models/xception-classifier-prepr-dr075-0.980.h5 -P models/
-
 wget https://storage.yandexcloud.net/ybs-123123/dice-models/dice-detection-model-dr03-0.729.h5 -P models/
 ```
 
@@ -71,7 +69,6 @@ run **model-coverter.py** script
 build docker image for Flask app - run from _project folder_
 ```
 docker build -t dice-detection-model:v03 -f deployment/Dockerfile .
-
 docker run -it --rm -p 9696:9696 dice-detection-model:v03
 ```
 and test it with **test.ipynb** notebook - row with `url = "http://localhost:9696/predict"` has to be uncommented
