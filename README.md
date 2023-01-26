@@ -113,4 +113,6 @@ bash kube-terminate.sh
 
 ![alt text](https://github.com/K0nkere/dice-detection-project/blob/cb164f53d5fadbc0b5b7187244d0d4458096b9e3/pics/predictions_2.png)
 
+![alt text](https://github.com/K0nkere/dice-detection-project/blob/688cd8fde27f9ae0de589ae60a625454b0bbc2ef/pics/predictions_5.png)
+
 
