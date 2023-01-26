@@ -108,6 +108,12 @@ bash kube-terminate.sh
 - deployment/requirements.txt - environment for the docker image
 - deployment/Dockerfile - for Flask app
 
+
+### Models creation and tuning
+I had been using Kaggle for these purposes and you can check [notebook](https://www.kaggle.com/code/konkore/dice-detection-model-tuning?scriptVersionId=117389175)
+
+Adopted version is added to this repo as **dice-detection-model-tuning.ipynb** but it take forever to execute it
+
 ### Examples of predictions
 ![alt text](https://github.com/K0nkere/dice-detection-project/blob/2b1dbc3f2347bb997afaa2cb88d305c4f61a5e05/pics/f_1.png)
 
