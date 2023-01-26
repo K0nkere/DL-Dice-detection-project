@@ -6,10 +6,8 @@ from tensorflow import keras
 n_layer = 4
 img_size = 128
 
-# detection_model = keras.models.load_model("models/dice-detection-model-dr03-0.729.h5")
 detection_model = keras.models.load_model("models/dice-detection-model-std-lanc-dr03-0.790.h5")
 
-# xception_classifier = keras.models.load_model("models/xception-classifier-prepr-dr075-0.980.h5")
 xception_classifier = keras.models.load_model("models/xception-classifier-prepr-lancoz-dr075-0.983.h5")
 
 inputs = keras.Input(shape=(img_size, img_size, 3))
