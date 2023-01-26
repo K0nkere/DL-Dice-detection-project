@@ -90,13 +90,14 @@ bash kube-terminate.sh
 
 ### Repo consist of files
 >
+- conda-requirements.txt - conda env requirements for project creation
 - basic-EDA.ipynb - exploratory data analisys for images of dataset that covers number of samples in each class, mean image per class construction
 - dice-detection-model-tuning.ipynb - notebook that covers process parametes tuning for detection and classification models 
-- conda-requirements.txt - conda venv for project creation
-- test-urls.txt - links to test images, that i've created with my own dices
-- test.ipynb - notebook to send tests for prediction service
+- train-models.py - script to train models with final parameters
 - kube-deployment.sh - script for deployment with kind and kubectl
 - kude-terminate.sh - script for terminating Kubernetes deployment
+- test-urls.txt - links to test images, that i've created with my own dices
+- test.ipynb - notebook to send tests for prediction service
 
 >
 - models/models-converter.py - convert .h5 models into .tflite
