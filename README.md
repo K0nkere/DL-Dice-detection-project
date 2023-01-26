@@ -45,11 +45,26 @@ from the _project folder_
 `pip3 install -r conda-requirements.txt`
 
 Add conda env kernel to kernels list in order to use as notebook kernel
+
 `conda install -y -c anaconda ipykernel`
 
 `python -m ipykernel install --user --name=dice-detection`
 
 Add select conda env kernel as a kernel for notebooks or add as it an interpreter
+
+#### 4. Models
+(optional - this step can be skipped, I included my .tflite models in the repo)
+
+Download original .h5 models (run the _project folder_)
+
+`wget https://storage.yandexcloud.net/ybs-123123/dice-models/xception-classifier-prepr-dr075-0.980.h5 -P models/`
+
+`wget https://storage.yandexcloud.net/ybs-123123/dice-models/dice-detection-model-dr03-0.729.h5 -P old_models/`
+
+run **model-coverter.py** script
+
+`python models/model-converter.py`
+
 
 #### Repo consist of files
 - basic-EDA.ipynb - exploratory data analisys for images of dataset that covers number of samples in each class, mean image per class construction
