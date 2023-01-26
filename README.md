@@ -72,6 +72,14 @@ build docker image for Flask app - run from _project folder_
 docker build -t dice-detection-model:v03 -f deployment/Dockerfile .
 docker run -it --rm -p 9696:9696 dice-detection-model:v03
 ```
+
+You can download this image from Yandex Cloud container registry
+```
+docker pull cr.yandex/crpkakorslfud9gk4ili/dice-detection-model:v03
+docker tag cr.yandex/crpkakorslfud9gk4ili/dice-detection-model:v03 dice-detection-model:v03
+```
+renaming is for the following commands
+
 and test it with **test.ipynb** notebook - row with `url = "http://localhost:9696/predict"` has to be uncommented
 
 
