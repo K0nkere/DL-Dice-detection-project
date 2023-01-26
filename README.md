@@ -55,15 +55,24 @@ Add select conda env kernel as a kernel for notebooks or add as it an interprete
 #### 4. Models
 (optional - this step can be skipped, I included my .tflite models in the repo)
 
-Download original .h5 models (run the _project folder_)
+Download original .h5 models - run the _project folder_ under conda activated env
 
 `wget https://storage.yandexcloud.net/ybs-123123/dice-models/xception-classifier-prepr-dr075-0.980.h5 -P models/`
 
-`wget https://storage.yandexcloud.net/ybs-123123/dice-models/dice-detection-model-dr03-0.729.h5 -P old_models/`
+`wget https://storage.yandexcloud.net/ybs-123123/dice-models/dice-detection-model-dr03-0.729.h5 -P models/`
 
 run **model-coverter.py** script
 
 `python models/model-converter.py`
+
+#### 5. Docker images
+build docker image for Flask app - run from _project folder_
+```
+docker build -t dice-detection-model:v03 -f deployment/Dockerfile .
+
+docker run -it --rm -p 9696:9696 dice-detection-model:v03
+```
+and test it with **test.ipynb** - row with `url = "http://localhost:9696/predict"` has to be uncommented
 
 
 #### Repo consist of files
@@ -87,11 +96,6 @@ run **model-coverter.py** script
 ### models training script
 
 
-
-
-create conda venv
-train models with script (or use pretrained)
-convert models with script (or use pretrained)
 
 test Flask app locally
 build docker image for Flask app
