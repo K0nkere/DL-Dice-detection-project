@@ -89,6 +89,7 @@ bash kube-terminate.sh
 ```
 
 ### Repo consist of files
+>
 - basic-EDA.ipynb - exploratory data analisys for images of dataset that covers number of samples in each class, mean image per class construction
 - dice-detection-model-tuning.ipynb - notebook that covers process parametes tuning for detection and classification models 
 - conda-requirements.txt - conda venv for project creation
@@ -97,16 +98,20 @@ bash kube-terminate.sh
 - kube-deployment.sh - script for deployment with kind and kubectl
 - kude-terminate.sh - script for terminating Kubernetes deployment
 
-
+>
 - models/models-converter.py - convert .h5 models into .tflite
 - models/viz-model.tflite - my pretrained detection model
 - models/xception-classifier.tflite - my pretrained classification model
 
-
+>
 - deployment/app.py - flask app script
 - deployment/main.py - the core of prediction pipeline
 - deployment/requirements.txt - environment for the docker image
 - deployment/Dockerfile - for Flask app
+
+>
+- pics - samples of predictions
+- trained-model - folder for trainig callbacks
 
 
 ### Models creation and tuning
@@ -121,4 +126,8 @@ Adopted version is added to this repo as **dice-detection-model-tuning.ipynb** b
 
 ![alt text](https://github.com/K0nkere/dice-detection-project/blob/2b1dbc3f2347bb997afaa2cb88d305c4f61a5e05/pics/f_3.png)
 
-
+### Future improvements
+This is realization of fist part of the idea. To do:
+- upgrade algo of dice localilzation
+- inject dice localization process into trainable pipeline
+- add numbers recognition on the upper faces
