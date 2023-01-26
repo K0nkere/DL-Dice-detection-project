@@ -28,14 +28,16 @@ Original [dataset is taken from Kaggle](https://www.kaggle.com/datasets/ucffool/
 - Kubernetes kind, kubectl
 
 #### 1. Clone this repo
-`git clone https://github.com/K0nkere/dice-detection-project.git`
+```
+git clone https://github.com/K0nkere/dice-detection-project.git
+```
 
 dice-detection-project will be your _project folder_
 #### 2. Download training+validation dataset from my repo
 from the _project folder_
 ```
 wget https://storage.yandexcloud.net/ybs-123123/dices-dataset.zip
-unzip dice-dataset.zip
+unzip dices-dataset.zip
 ```
 #### 3. Create conda virtual environment
 ```
