@@ -22,7 +22,7 @@ def download_image(url):
 def prepare_image(img, target_size):
     if img.mode != 'RGB':
         img = img.convert('RGB')
-    img = img.resize(target_size, Image.NEAREST)
+    img = img.resize(target_size, Image.LANCZOS) #Image.NEAREST)
     return img
 
 class Detector:

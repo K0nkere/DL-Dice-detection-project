@@ -2,6 +2,8 @@
 kind create cluster
 kubectl cluster-info --context kind-kind
 
+docker images | grep detection-model
+
 kind load docker-image dice-detection-model:v03
 
 sleep 2
