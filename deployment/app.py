@@ -14,7 +14,7 @@ prefix = ""
 classifier_model = f"{prefix}models/xception-classifier.tflite"
 viz_model = f"{prefix}models/viz-model.tflite"
 
-preprocess_type = "xception"
+preprocess_type = "standart"
 
 predictor = Detector(img_size=128, preprocess_type=preprocess_type, classes=classes, classifier_model=classifier_model, viz_model=viz_model)
 

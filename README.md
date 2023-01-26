@@ -57,8 +57,8 @@ Add select conda env kernel as a kernel for notebooks or add as it an interprete
 
 Download original .h5 models - run the _project folder_ under conda activated env
 ```
-wget https://storage.yandexcloud.net/ybs-123123/dice-models/xception-classifier-prepr-dr075-0.980.h5 -P models/
-wget https://storage.yandexcloud.net/ybs-123123/dice-models/dice-detection-model-dr03-0.729.h5 -P models/
+wget https://storage.yandexcloud.net/ybs-123123/dice-models/xception-classifier-prepr-lancoz-dr075-0.983.h5 -P models/
+wget https://storage.yandexcloud.net/ybs-123123/dice-models/dice-detection-model-std-lanc-dr03-0.790.h5 -P models/
 ```
 
 run **model-coverter.py** script
